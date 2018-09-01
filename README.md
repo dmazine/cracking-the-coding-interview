@@ -149,7 +149,9 @@ O(N ˆ 2).
 > Sum of integers 1 through N
 > 
 > What is t1 + 2 + 3 + ... (N - 3) + (N - 2) + N?
+>
 > If we pair 1 with N, 2 with (N - 2), 3 with (N - 2) and so on.
+>
 > (N + 1) + (2 + (N - 1)) + (3 + (N - 2)) ... = (N / 2) * (N - 1)
 
 1. What is the runtime of the code below?
