@@ -115,7 +115,7 @@ However, this does not apply to exponents. The base of an exponent does matter.
     }
     ```
     
-    O(N)
+    This will take O(N) time. The fact we iterate through the array twice does not matter.
 
 1. What is the runtime of the code below?
 
@@ -129,7 +129,11 @@ However, this does not apply to exponents. The base of an exponent does matter.
     }    
     ```
     
-    O(Nˆ2)
+    The inner for loop has O(N) iterations and it is called N times, so the runtime is O(Nˆ2).
+    
+    *Alternative way of think: It is printing all pairs (two-element sequences). There are O(Nˆ2) pairs; therefore,
+    the runtime is O(Nˆ2).*
+    
 
 1. What is the runtime of the code below?
 
@@ -154,52 +158,107 @@ However, this does not apply to exponents. The base of an exponent does matter.
     >
     > (N + 1) + (2 + (N - 1)) + (3 + (N - 2)) ... = (N / 2) * (N - 1)
 
+    *Alternative way of think: It iterates through each pair of values for (i, j) where j is bigger than i. There are
+    Nˆ2 total pairs. Roughly half of those will have i < j and the remaining halpf will have i > j. This code goes
+    through roughly (N ^ 2) / 2 pairs so O(N ^2) work.*
+    
 1. What is the runtime of the code below?
 
-```
-```
-
-1. What is the runtime of the code below?
-
-```
-```
-
-1. What is the runtime of the code below?
-
-```
-```
-
-1. What is the runtime of the code below?
-
-```
-```
-
-1. What is the runtime of the code below?
-
-```
-```
-
-1. What is the runtime of the code below?
-
-```
-```
-1. What is the runtime of the code below?
-
-```
-```
+    ```
+    void printUnorderedPairs(int[] arrayA, int[] arrayB) {
+        for (int i = 0; i < arrayA.length; i++) {
+            for (int j = 0; j < arrayB.length; j++) {
+                if (arrayA[i] < arrayB[j]) {
+                    System.out.println(arrayA[i] + ", " + arrayB[j]);
+                }
+            }
+        }
+    }                
+    ```
+    
+    The if-statement is within j's for loop is O(1) time since it's just a sequence of constant-time statements.
+    
+    For each element of arrayA, the inner for loop goes through b iterations, where b = arrayB.length. If
+    a = arrayA.length, then the runtime is O(a * b).
 
 1. What is the runtime of the code below?
 
-```
-```
+    ```
+    void reverse(int[] array) {
+        for (int i = 0; i < array.length / 2; i++) {
+            int other = array.length - i - 1;
+            int temp = array[i];
+            array[i] = arrayj[other];
+            array[other] = temp;
+        }
+    }       
+    ```
+    
+    This algorithm runs in O(N) time. The fact that it only goes through half of the array (in terms of iterations) does
+    not impact the big O time.
+
+1. Which of the following are equivalent to O(N)?
+
+    * O (N + P), where P < N /2
+    
+        Equivalent - if P < N / 2, N is the dominant term so we can drop O(P).
+    
+    * O(2N)
+    
+        Equivalent - we can drop constants.
+    
+    * O (N + log N)
+    
+        Equivalent - O(N) dominates O(log N), so we can drop O(log N).
+    
+    * O (N + M)
+    
+        Not equivalent - There is no established relationship between N amd M, so we have to keep both variables.
+
+1. Suppose we had an algorithm that took in an array of strings, sorted each string, and then sorted the full array.
+What would the runtime be?
+
+    * Let s be the length of the longest string.
+    * Let a be the length of the array.
+    
+    Now we can work through this is parts:
+    
+    * Sorting each string is O(s log s).
+    
+    * We have to do this for every string in the array, so that is O(a * s log s).
+    
+    * Now we have to sort the strings in the array and we should take into account that we need to compare the strings.
+    Each string comparison takes O(s) time. There are O(a log a) comparisons, therefore this will take O(s * a log a)
+    time.
+    
+    This means, O((a * s log s) + (s * a log a)) or O((a * s)(log s + log a)) time. 
 
 1. What is the runtime of the code below?
 
-```
-```
+    ```
+    ```
 
 1. What is the runtime of the code below?
 
-```
-```
+    ```
+    ```
+1. What is the runtime of the code below?
+
+    ```
+    ```
+
+1. What is the runtime of the code below?
+
+    ```
+    ```
+
+1. What is the runtime of the code below?
+
+    ```
+    ```
+
+1. What is the runtime of the code below?
+
+    ```
+    ```
 
