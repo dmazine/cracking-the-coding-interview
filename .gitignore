@@ -1,0 +1,24 @@
+# Maven
+.mvn
+mvnw
+mvnw.cmd
+log/
+target/
+effective.pom
+pom.xml.releaseBackup
+release.properties
+.factorypath
+.springBeans
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
