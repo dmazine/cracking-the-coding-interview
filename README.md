@@ -83,8 +83,8 @@ Runtime of the code above is O(2ˆN).
 >
 > Consider the sequence (2 ^ 0) + (2 ^ 1) + (2 ^ 2) + ... + (2 ^ N). What is the result?
 >
->     |Power        |Binary |Decimal
-> ----|-------------|-------|-------
+> |    |Power        |Binary |Decimal
+> |----|-------------|-------|-------
 >     | 2 ^ 0       | 00001 | 1
 >     | 2 ^ 1       | 00010 | 2
 >     | 2 ^ 2       | 00100 | 4
