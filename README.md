@@ -101,58 +101,58 @@ However, this does not apply to exponents. The base of an exponent does matter.
 
 1. What is the runtime of the code below?
 
-```
-void foo(int[] array) {
-    int sum = 0;
-    int product = 1;
-    for (int i = 0; i < array.length; i++) {
-        sum += array[1];
+    ```
+    void foo(int[] array) {
+        int sum = 0;
+        int product = 1;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[1];
+        }
+        for (int i = 0; i < array.length; i++) {
+            product *= array[1];
+        }
+        System.out.println(sum + ", " + product);
     }
-    for (int i = 0; i < array.length; i++) {
-        product *= array[1];
-    }
-    System.out.println(sum + ", " + product);
-}
-```
-
-O(N)
+    ```
+    
+    O(N)
 
 1. What is the runtime of the code below?
 
-```
-void printPairs(int[] array) {
-    for (int i = 0; i < array.length; i++) {
-        for (int j = 0; j < array.length; j++) {
-            System.out.println(array[i] + ", " + array[j]);
+    ```
+    void printPairs(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                System.out.println(array[i] + ", " + array[j]);
+            }
         }
-    }
-}    
-```
-
-O(Nˆ2)
+    }    
+    ```
+    
+    O(Nˆ2)
 
 1. What is the runtime of the code below?
 
-```
-void printUnorderedPairs(int[] array) {
-    for (int i = 0; i < array.length; i++) {
-        for (int j = i + 1; j < array.length; j++) {
-            System.out.println(array[i] + ", " + array[j]);
+    ```
+    void printUnorderedPairs(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                System.out.println(array[i] + ", " + array[j]);
+            }
         }
     }
-}
-```
-
-The number of steps total is: (N - 1) + (N - 2) + (N - 3) + ... + 2 + 1 = (N / 2) * (N + 1). Thus the runtime will be
-O(N ˆ 2).
-
-> Sum of integers 1 through N
-> 
-> What is t1 + 2 + 3 + ... (N - 3) + (N - 2) + N?
->
-> If we pair 1 with N, 2 with (N - 2), 3 with (N - 2) and so on.
->
-> (N + 1) + (2 + (N - 1)) + (3 + (N - 2)) ... = (N / 2) * (N - 1)
+    ```
+    
+    The number of steps total is: (N - 1) + (N - 2) + (N - 3) + ... + 2 + 1 = (N / 2) * (N + 1). Thus the runtime will be
+    O(N ˆ 2).
+    
+    > Sum of integers 1 through N
+    > 
+    > What is t1 + 2 + 3 + ... (N - 3) + (N - 2) + N?
+    >
+    > If we pair 1 with N, 2 with (N - 2), 3 with (N - 2) and so on.
+    >
+    > (N + 1) + (2 + (N - 1)) + (3 + (N - 2)) ... = (N / 2) * (N - 1)
 
 1. What is the runtime of the code below?
 
